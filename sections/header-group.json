@@ -5,7 +5,7 @@
     "announcement": {
       "type": "announcement-bar",
       "settings": {
-        "text": "Free shipping on orders over $75 — worldwide"
+        "text": "free shipping over $75 · worldwide"
       }
     },
     "header": {

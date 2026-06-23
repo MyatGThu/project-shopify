@@ -7,18 +7,19 @@
    ===================================================================== */
 
 :root {
-  /* — Color (default "Bone & Bronze"; overridden by theme settings) — */
-  --color-bg: #f6f3ee;
+  /* — Color (relatable-glam, from Melina's anchors; overridden by settings) — */
+  --color-bg: #f2f2f0; /* cool-neutral paper (retired warm bone) */
   --color-surface: #ffffff;
-  --color-ink: #161413;
-  --color-muted: #6e6a64;
-  --color-line: #e5dfd6;
-  --color-accent: #b08d57;
-  --color-ink-bg: #161413;
-  --color-on-ink: #f6f3ee;
+  --color-ink: #141414; /* jet-black — her hair */
+  --color-muted: #6b6e6b; /* cool grey */
+  --color-line: #e3e3df; /* cool hairline */
+  --color-accent: #6e7d71; /* grey-green — her signature eye colour */
+  --color-gold: #c2a35a; /* delicate gold — her jewellery; use sparingly */
+  --color-ink-bg: #141414;
+  --color-on-ink: #f2f2f0;
 
   /* — Type families (overridden from settings) — */
-  --font-heading: "Playfair Display", Georgia, "Times New Roman", serif;
+  --font-heading: "Lora", "Instrument Serif", Georgia, "Times New Roman", serif;
   --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
 
   /* — Fluid type scale (~1.25 major third) — */
@@ -173,8 +174,8 @@ p {
 .eyebrow {
   font-size: var(--fs-200);
   font-weight: 600;
-  letter-spacing: var(--tracking-wide);
-  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-transform: lowercase;
   color: var(--color-muted);
 }
 .muted {
@@ -237,8 +238,8 @@ button:focus-visible,
   border-radius: var(--radius-sm);
   font-size: var(--fs-200);
   font-weight: 600;
-  letter-spacing: var(--tracking-wide);
-  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  text-transform: lowercase;
   cursor: pointer;
   transition:
     transform var(--dur-micro) var(--ease-out),
@@ -277,7 +278,8 @@ button:focus-visible,
 .site-header__brand {
   font-family: var(--font-heading);
   font-size: var(--fs-600);
-  letter-spacing: 0.02em;
+  letter-spacing: 0.01em;
+  text-transform: lowercase;
 }
 .site-nav {
   display: flex;
@@ -287,6 +289,7 @@ button:focus-visible,
 .site-nav a {
   font-size: var(--fs-300);
   letter-spacing: 0.04em;
+  text-transform: lowercase;
   position: relative;
 }
 .site-nav a::after {
@@ -345,8 +348,8 @@ button:focus-visible,
   text-align: center;
   padding-block: var(--space-2xs);
   font-size: var(--fs-200);
-  letter-spacing: var(--tracking-wide);
-  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  text-transform: lowercase;
 }
 
 /* ------------------------------ Hero ------------------------------ */
@@ -576,9 +579,9 @@ h2 em,
   writing-mode: vertical-rl;
   text-orientation: mixed;
   font-size: var(--fs-200);
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: rgba(246, 243, 238, 0.7);
+  letter-spacing: 0.2em;
+  text-transform: lowercase;
+  color: rgba(242, 242, 240, 0.7);
 }
 .hero__scrollcue {
   position: absolute;
@@ -589,9 +592,9 @@ h2 em,
   align-items: center;
   gap: var(--space-sm);
   font-size: var(--fs-200);
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: rgba(246, 243, 238, 0.7);
+  letter-spacing: 0.15em;
+  text-transform: lowercase;
+  color: rgba(242, 242, 240, 0.7);
 }
 .hero__scrollcue::before {
   content: "";
@@ -638,7 +641,7 @@ h2 em,
 .marquee__sep {
   margin-inline: var(--space-xl);
   font-size: 0.5em;
-  color: var(--color-accent);
+  color: var(--color-gold);
 }
 @keyframes marquee {
   from { transform: translateX(0); }

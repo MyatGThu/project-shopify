@@ -1,9 +1,9 @@
 {%- comment -%}
-  Campaign hero — the design-system showcase.
-  - Entrance animation: [data-hero-intro] + [data-hero-stagger] (theme.js),
-    triggered after the loading screen wipes away.
-  - Subtle parallax on the media via [data-parallax] (scoped to the section).
-  - Falls back to a styled placeholder until a Melina image is added.
+  Campaign hero — relatable-glam, bottom-aligned, oversized type.
+  - Entrance: [data-hero-intro] + [data-hero-stagger] (theme.js), after the loader.
+  - Subtle parallax on the media via [data-parallax].
+  - The last heading line renders as a grey-green italic accent (her signature).
+  - Styled placeholder until a Melina image is added.
 {%- endcomment -%}
 <section
   class="hero{% if section.settings.image == blank %} hero--placeholder{% endif %}"
@@ -25,9 +25,13 @@
     {%- endif -%}
   </div>
 
+  {%- if section.settings.side_label != blank -%}
+    <span class="hero__sidelabel">{{ section.settings.side_label }}</span>
+  {%- endif -%}
+
   <div class="container hero__content">
     {%- if section.settings.eyebrow != blank -%}
-      <p class="eyebrow" style="color: rgba(246, 243, 238, 0.8);">
+      <p class="eyebrow" style="color: rgba(242, 242, 240, 0.8);">
         <span data-hero-stagger style="display: inline-block;">{{ section.settings.eyebrow }}</span>
       </p>
     {%- endif -%}
@@ -36,13 +40,19 @@
       {%- assign lines = section.settings.heading | newline_to_br | split: '<br />' -%}
       {%- for line in lines -%}
         <span style="display: block; overflow: hidden;">
-          <span data-hero-stagger style="display: block;">{{ line | strip }}</span>
+          <span data-hero-stagger style="display: block;">
+            {%- if section.settings.accent_last_line and forloop.last and lines.size > 1 -%}
+              <em>{{ line | strip }}</em>
+            {%- else -%}
+              {{ line | strip }}
+            {%- endif -%}
+          </span>
         </span>
       {%- endfor -%}
     </h1>
 
     {%- if section.settings.text != blank -%}
-      <p class="lead" style="color: rgba(246, 243, 238, 0.85); margin-top: var(--space-md); max-width: 32ch;">
+      <p class="lead" style="color: rgba(242, 242, 240, 0.85); margin-top: var(--space-md); max-width: 36ch;">
         <span data-hero-stagger style="display: inline-block;">{{ section.settings.text }}</span>
       </p>
     {%- endif -%}
@@ -60,6 +70,10 @@
       {%- endif -%}
     </div>
   </div>
+
+  {%- if section.settings.scroll_cue != blank -%}
+    <span class="hero__scrollcue">{{ section.settings.scroll_cue }}</span>
+  {%- endif -%}
 </section>
 
 {% schema %}
@@ -67,19 +81,22 @@
   "name": "Hero",
   "settings": [
     { "type": "image_picker", "id": "image", "label": "Background image (Melina campaign)" },
-    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Spring Campaign" },
+    { "type": "text", "id": "side_label", "label": "Vertical side label", "default": "melbourne · est. 2026" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "spring campaign" },
     {
       "type": "textarea",
       "id": "heading",
       "label": "Heading",
-      "info": "Each line animates in separately.",
-      "default": "Wear\nthe future"
+      "info": "Each line animates in separately; the last line becomes the italic accent.",
+      "default": "i make\nnice things"
     },
-    { "type": "text", "id": "text", "label": "Subtext", "default": "Print-on-demand pieces, modeled by Melina." },
-    { "type": "text", "id": "button_label", "label": "Primary button", "default": "Shop the drop" },
+    { "type": "checkbox", "id": "accent_last_line", "label": "Italicise the last line", "default": true },
+    { "type": "text", "id": "text", "label": "Subtext", "default": "made-to-order pieces, modeled by me. (yes, i'm AI.)" },
+    { "type": "text", "id": "button_label", "label": "Primary button", "default": "shop the drop" },
     { "type": "url", "id": "button_link", "label": "Primary link" },
-    { "type": "text", "id": "button2_label", "label": "Secondary button", "default": "View lookbook" },
-    { "type": "url", "id": "button2_link", "label": "Secondary link" }
+    { "type": "text", "id": "button2_label", "label": "Secondary button", "default": "meet melina" },
+    { "type": "url", "id": "button2_link", "label": "Secondary link" },
+    { "type": "text", "id": "scroll_cue", "label": "Scroll cue", "default": "scroll" }
   ],
   "presets": [{ "name": "Hero" }]
 }

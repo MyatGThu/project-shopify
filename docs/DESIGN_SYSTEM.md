@@ -1,120 +1,117 @@
 # Design System
 
-The visual language for a **premium, editorial POD fashion brand**. The default
-direction is implemented in the theme today; the alternatives are one settings
-change away (see "Switching directions" below).
+The visual language is **relatable-glam**, derived from Melina's character
+bible: *"gorgeous but attainable… model-off-duty… NOT cold luxury editorial."*
+Polished, but warm and approachable — not icy/luxe. The default direction below
+is implemented in the theme today.
 
 ---
 
-## 1. Typography — choose a direction
+## 1. Direction — relatable-glam
 
-Three researched pairings, each pairing a **display** face (headlines, hero,
-section titles) with a **text** face (body, UI, captions). All are on Google
-Fonts and available in Shopify's font picker, so you can switch in the theme
-customizer with no code.
-
-### Direction A — "Editorial Luxe" ✅ *default*
-- **Display:** Playfair Display — high-contrast transitional serif, timeless and
-  elegant; the workhorse of luxury editorial layouts.
-- **Text:** Inter — neutral, highly legible grotesque; disappears so the imagery
-  and serif headlines lead.
-- **Feels like:** Vogue-adjacent, refined, trustworthy. Safe premium default.
-
-### Direction B — "Modern Fashion"
-- **Display:** Instrument Serif — contemporary, slightly quirky high-fashion
-  serif; reads current and design-forward.
-- **Text:** Plus Jakarta Sans — geometric, friendly-modern sans.
-- **Feels like:** A young, design-led label (think editorial streetwear).
-
-### Direction C — "Haute Minimal"
-- **Display:** Cormorant Garamond — delicate, high-contrast Didone-ish serif;
-  very airy and boutique.
-- **Text:** Montserrat — clean geometric sans.
-- **Feels like:** Boutique, wedding-luxe, lots of whitespace.
-
-> **Recommendation:** Start with **A (Editorial Luxe)** — it's the most robust
-> across product photography and long-form copy. Move to **B** if you want the
-> brand to feel younger / more design-led once Melina's campaign imagery sets the
-> tone.
-
-**Switching directions:** Online Store → Customize → Theme settings →
-Typography → pick the Heading + Body fonts. Or change the defaults in
-`config/settings_data.json` (`heading_font`, `body_font`) and the fallback stacks
-in `snippets/css-variables.liquid`.
+| Principle (from the bible) | How it shows up on the site |
+| --- | --- |
+| Relatable-glam, not cold luxury | Friendlier serif, lowercase casual voice, lifestyle imagery |
+| Openly AI is "the edge" | A confident "meet melina" moment + honest disclosure |
+| Products are real | Copy centres real, made-to-order goods; only the model is AI |
+| Melbourne is a character fact | Laneways, cafés, terraces, the bay as imagery settings |
 
 ---
 
-## 2. Type scale
+## 2. Typography
 
-Fluid scale using `clamp()` (defined in `assets/base.css`), roughly a
-**1.25 (major third)** ratio, so headlines scale smoothly between mobile and
-desktop.
+- **Heading:** **Lora** — a warm, contemporary humanist serif (friendlier than a
+  cold Didone like Playfair). Set in the theme via the font picker.
+- **Body:** **Inter** — clean, highly legible grotesque.
+- **Upgrade path:** if your store's font library includes them, **Instrument
+  Serif** or **Fraunces** read even more current — swap the heading font in the
+  customizer (they're already in the CSS fallback stack).
 
-| Token | Use | Approx range |
+**Casual voice in type:** eyebrows, nav, buttons, and the wordmark are
+**lowercase** (her "lower-case for casual" rule). Headlines stay natural case;
+the **last hero line is a grey-green italic** accent.
+
+Change fonts in Online Store → Customize → Theme settings → Typography, or edit
+`heading_font` / `body_font` in `config/settings_data.json`.
+
+### Type scale
+Fluid `clamp()` scale (~1.25 major third) in `assets/base.css`: `--fs-200`
+(eyebrow) → `--fs-900` (hero display, up to ~7.5rem).
+
+---
+
+## 3. Color palette — "Bone & Bronze" retired, now from Melina's anchors
+
+| Token | Hex | Drawn from |
 | --- | --- | --- |
-| `--fs-900` | Hero display | 2.75 → 6rem |
-| `--fs-800` | Page / section title | 2.25 → 3.75rem |
-| `--fs-700` | Sub-section | 1.75 → 2.5rem |
-| `--fs-600` | Card / lead | 1.4 → 1.75rem |
-| `--fs-500` | Large body | 1.15 → 1.25rem |
-| `--fs-400` | Body | 1rem |
-| `--fs-300` | Small / caption | 0.85rem |
-| `--fs-200` | Eyebrow / label | 0.75rem (tracked +0.12em, uppercase) |
+| `--color-bg` | `#F2F2F0` | cool-neutral paper (her cool-neutral skin rule) |
+| `--color-surface` | `#FFFFFF` | cards, drawers |
+| `--color-ink` | `#141414` | jet-black — her hair |
+| `--color-muted` | `#6B6E6B` | cool grey |
+| `--color-line` | `#E3E3DF` | cool hairline |
+| `--color-accent` | `#6E7D71` | **grey-green — her signature eyes** |
+| `--color-gold` | `#C2A35A` | **delicate gold — her jewellery (use sparingly)** |
+| `--color-ink-bg` | `#141414` | dark sections |
+| `--color-on-ink` | `#F2F2F0` | text on dark |
+
+The grey-green is the brand's ownable accent (it's literally her eyes). Gold is a
+*delicate* metallic detail only — hairlines, the marquee separator — never a fill.
+Real warmth comes from Melina's imagery, not the UI.
 
 ---
 
-## 3. Color palette (default "Bone & Bronze")
+## 4. Voice & copy
 
-A restrained, warm palette that flatters apparel photography. Defined as tokens
-in `snippets/css-variables.liquid`.
+Direct, dry, self-aware, warm — **never try-hard**. First person where Melina
+speaks; lowercase for casual chrome. Her canonical intro line — *"i make nice
+things"* — is the hero headline.
 
-| Token | Hex | Role |
-| --- | --- | --- |
-| `--color-bg` | `#F6F3EE` | Page background (warm bone) |
-| `--color-surface` | `#FFFFFF` | Cards, drawers |
-| `--color-ink` | `#161413` | Primary text (rich near-black) |
-| `--color-muted` | `#6E6A64` | Secondary text |
-| `--color-line` | `#E5DFD6` | Hairline borders |
-| `--color-accent` | `#B08D57` | Warm bronze — links, focus, small accents |
-| `--color-ink-bg` | `#161413` | Dark sections (inverts to bone text) |
+**Openly-AI + real products (the reconciliation):**
+> *"i'm melina — a model & content creator in melbourne. and i'm AI, not hiding
+> it. the clothes, though, are real — made to order."*
 
-Keep accent usage **sparse** — premium brands lean on contrast and whitespace,
-not color. Most "color" should come from Melina's imagery.
+This leans into the bible's openly-AI edge **and** keeps products real. An honest
+"AI-generated model" line also satisfies platform/AU disclosure expectations.
 
 ---
 
-## 4. Spacing & layout
+## 5. Imagery direction
 
-- **Spacing scale** (`--space-*`): `4, 8, 12, 16, 24, 32, 48, 64, 96, 128px`
-  exposed as `--space-3xs … --space-3xl`.
-- **Page width:** `--page-width` (default `1400px`), `--page-width-narrow`
-  (`760px`) for long-form text.
-- **Gutters:** fluid `--gutter` (clamps ~20→48px).
-- **Radius:** `--radius-sm` 2px, `--radius` 6px, `--radius-lg` 14px (mostly
-  square — luxe tends to sharp corners).
+- **Natural, un-retouched** — visible texture, **keep the freckles**; no glossy
+  over-grading.
+- **Cool-skin-under-warm-light** — warm/golden light may fall on her, but her skin
+  stays light and cool-neutral. Hold this in any colour grade.
+- **Melbourne settings** — laneway cafés, terrace/warehouse interiors, trams, the
+  bay, real golden hour. Authentic, photogenic, model-off-duty.
+- **Aspect ratios** — favour **4:5** (portrait) and **9:16** (vertical), her native
+  formats; plan for **vertical Reels-style video**. (Specs in `MELINA_ASSETS.md`.)
 
 ---
 
-## 5. Motion principles
+## 6. Motion principles
 
-Animation should feel **intentional and quiet**, never bouncy.
+Quiet and intentional — never bouncy or gimmicky.
 
-- **Easing:** `--ease-out` `cubic-bezier(0.16, 1, 0.3, 1)` (primary),
-  `--ease-in-out` `cubic-bezier(0.65, 0, 0.35, 1)`.
-- **Durations:** micro `150ms`, base `400ms`, scene `700–900ms`.
-- **Scroll reveals:** elements fade + rise ~24px as they enter (handled by
-  `[data-reveal]` in `theme.js`). Stagger groups with `[data-reveal-group]`.
-- **Parallax:** subtle only (`[data-parallax]`, ≤12% travel).
-- **Loading screen:** brand mark + wipe, exits once assets load, then hands off
-  to the hero entrance.
-- **Accessibility:** everything is gated behind `prefers-reduced-motion`. When a
-  visitor opts out, content appears instantly with no transform.
+- **Reveals:** fade + rise as elements enter (`[data-reveal]`, theme.js); stagger
+  groups with `[data-reveal-group]`.
+- **Hero:** oversized type animates up line-by-line after the loader wipes.
+- **Transitions:** her rule — *dissolves for lifestyle, cuts for fashion; never
+  iris or smooth* (they read as AI). Our fades/cuts match.
+- **Accessibility:** everything is gated behind `prefers-reduced-motion`; opted-out
+  visitors get instant, transform-free content.
+
+---
+
+## Alternative directions (not default)
+
+- **Editorial Luxe** — Playfair Display + Inter, bone & bronze, all-caps. More
+  formal; the bible explicitly steers away from this "cold luxury" register.
+- **Haute Minimal** — Cormorant Garamond + Montserrat. Boutique/airy.
 
 ---
 
 ## Sources
 
-- [Typewolf — 40 Best Google Fonts (2026)](https://www.typewolf.com/google-fonts)
-- [LandingPageFlow — Google Font Pairings for 2026](https://www.landingpageflow.com/post/google-font-pairings-for-websites)
-- [Ace & Whim — Free Google Fonts for Luxury Brands](https://aceandwhim.com/13-free-google-fonts-for-your-luxury-brand-website/)
+- Melina Character Bible (Rev 3.0, Melbourne) — internal
+- [Typewolf — Best Google Fonts](https://www.typewolf.com/google-fonts)
 - [GSAP — ScrollTrigger docs](https://gsap.com/docs/v3/Plugins/ScrollTrigger/)

@@ -3,31 +3,56 @@
     "hero": {
       "type": "hero",
       "settings": {
-        "eyebrow": "Spring Campaign",
-        "heading": "Wear\nthe future",
-        "text": "Print-on-demand pieces, modeled by Melina.",
-        "button_label": "Shop the drop",
-        "button2_label": "View lookbook"
+        "side_label": "melbourne · est. 2026",
+        "eyebrow": "spring campaign",
+        "heading": "i make\nnice things",
+        "accent_last_line": true,
+        "text": "made-to-order pieces, modeled by me. (yes, i'm AI.)",
+        "button_label": "shop the drop",
+        "button2_label": "meet melina",
+        "scroll_cue": "scroll"
       }
+    },
+    "marquee": {
+      "type": "marquee",
+      "settings": { "dark": true, "speed": 28 },
+      "blocks": {
+        "m1": { "type": "item", "settings": { "text": "made to order" } },
+        "m2": { "type": "item", "settings": { "text": "modeled by melina" } },
+        "m3": { "type": "item", "settings": { "text": "zero waste" } },
+        "m4": { "type": "item", "settings": { "text": "openly AI" } },
+        "m5": { "type": "item", "settings": { "text": "shipped worldwide" } }
+      },
+      "block_order": ["m1", "m2", "m3", "m4", "m5"]
     },
     "featured": {
       "type": "featured-collection",
       "settings": {
-        "eyebrow": "New in",
-        "heading": "The latest drop",
+        "eyebrow": "new in",
+        "heading": "the latest drop",
         "products_to_show": 4,
         "show_view_all": true
       }
     },
-    "story": {
+    "meet": {
+      "type": "editorial",
+      "settings": {
+        "index": "01 —",
+        "heading": "meet melina",
+        "text": "<p>i'm a model and content creator in melbourne — and i'm AI, completely synthetic and not hiding it. the clothes, though, are real: made to order, just for you.</p>",
+        "button_label": "more about me",
+        "reverse": false
+      }
+    },
+    "ethos": {
       "type": "rich-text",
       "settings": {
-        "eyebrow": "Our story",
-        "heading": "Designed to stand out",
-        "text": "<p>Every piece is real and made to order, modeled by Melina, our muse — standout apparel with zero waste.</p>",
+        "eyebrow": "made in melbourne",
+        "heading": "real clothes, made to order",
+        "text": "<p>every piece is produced on demand — nothing sits in a warehouse, nothing goes to waste.</p>",
         "dark": true
       }
     }
   },
-  "order": ["hero", "featured", "story"]
+  "order": ["hero", "marquee", "featured", "meet", "ethos"]
 }
