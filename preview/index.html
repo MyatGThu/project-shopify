@@ -1,0 +1,176 @@
+<!doctype html>
+<!--
+  STATIC PREVIEW — dev only, NOT part of the Shopify theme.
+  Mirrors templates/index.json (hero + featured collection + rich text) using
+  the real design system (../assets/base.css) and motion (../assets/theme.js,
+  ../assets/loading.js). Open this file in a browser to see the look + GSAP
+  animations + loading screen without Shopify. Content is hardcoded; there are
+  no live products or checkout here. Shopify ignores this folder on upload.
+-->
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Melina — Static Preview</title>
+
+    <!-- Fonts (the Shopify theme loads these via the font picker instead) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- The real design system -->
+    <link rel="stylesheet" href="../assets/base.css" />
+
+    <script>
+      document.documentElement.className = document.documentElement.className.replace("no-js", "js");
+    </script>
+  </head>
+
+  <body class="template-index">
+    <!-- Loading screen (../assets/loading.js controls it) -->
+    <div class="loader" data-loader role="status" aria-live="polite">
+      <div class="loader__inner text-center">
+        <div class="loader__mark">Melina</div>
+        <div class="loader__bar"><span></span></div>
+        <span class="visually-hidden">Loading…</span>
+      </div>
+    </div>
+
+    <!-- Announcement + header -->
+    <div class="announcement">Free shipping on orders over $75 — worldwide</div>
+    <header class="site-header">
+      <div class="container site-header__inner">
+        <a href="#" class="site-header__brand">Melina</a>
+        <nav class="site-nav" aria-label="Primary">
+          <a href="#">New in</a>
+          <a href="#">Tees</a>
+          <a href="#">Outerwear</a>
+          <a href="#">Lookbook</a>
+        </nav>
+        <div class="header-actions">
+          <a href="#">Search</a>
+          <a href="#" class="header-cart">Cart (0)</a>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- Hero (placeholder media; swap in a Melina campaign image later) -->
+      <section class="hero hero--placeholder" data-hero-intro data-parallax-scope>
+        <div class="hero__media"></div>
+        <div class="container hero__content">
+          <p class="eyebrow" style="color: rgba(246, 243, 238, 0.8)">
+            <span data-hero-stagger style="display: inline-block">Spring Campaign</span>
+          </p>
+          <h1 class="hero__title">
+            <span style="display: block; overflow: hidden"
+              ><span data-hero-stagger style="display: block">Wear</span></span
+            >
+            <span style="display: block; overflow: hidden"
+              ><span data-hero-stagger style="display: block">the future</span></span
+            >
+          </h1>
+          <p
+            class="lead"
+            style="color: rgba(246, 243, 238, 0.85); margin-top: var(--space-md); max-width: 32ch"
+          >
+            <span data-hero-stagger style="display: inline-block"
+              >Print-on-demand pieces, styled by Melina.</span
+            >
+          </p>
+          <div class="hero__cta" data-hero-stagger>
+            <a href="#featured" class="btn btn--accent">Shop the drop</a>
+            <a href="#" class="btn btn--ghost" style="color: var(--color-on-ink)">View lookbook</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Featured collection (placeholder cards; scroll down to see reveals) -->
+      <section class="section featured-collection" id="featured">
+        <div class="container">
+          <header class="stack-sm" style="margin-bottom: var(--space-xl)">
+            <p class="eyebrow" data-reveal="fade">New in</p>
+            <h2 data-reveal>The latest drop</h2>
+          </header>
+          <div class="product-grid" data-reveal-group>
+            <div class="product-card" data-reveal>
+              <div class="product-card__media" style="background: linear-gradient(135deg, #d8cfc2, #ece6dc)"></div>
+              <div class="product-card__title">Oversized Tee — Noir</div>
+              <div class="product-card__price">$42.00</div>
+            </div>
+            <div class="product-card" data-reveal>
+              <div class="product-card__media" style="background: linear-gradient(135deg, #cdbfae, #e7ddcd)"></div>
+              <div class="product-card__title">Boxy Tee — Bone</div>
+              <div class="product-card__price">$42.00</div>
+            </div>
+            <div class="product-card" data-reveal>
+              <div class="product-card__media" style="background: linear-gradient(135deg, #c9bca8, #efe9df)"></div>
+              <div class="product-card__title">Heavyweight Hoodie</div>
+              <div class="product-card__price">$78.00</div>
+            </div>
+            <div class="product-card" data-reveal>
+              <div class="product-card__media" style="background: linear-gradient(135deg, #d3c6b4, #e4dccd)"></div>
+              <div class="product-card__title">Cap — Bronze</div>
+              <div class="product-card__price">$28.00</div>
+            </div>
+          </div>
+          <div class="text-center" style="margin-top: var(--space-2xl)" data-reveal="fade">
+            <a href="#" class="btn btn--ghost">View all</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Rich text (dark) -->
+      <section class="section section--ink">
+        <div class="container container--narrow text-center stack">
+          <p class="eyebrow" data-reveal="fade">Our story</p>
+          <h2 data-reveal>Designed to stand out</h2>
+          <div class="lead flow" data-reveal>
+            <p>
+              Every piece is made to order and styled by Melina, our digital muse — so you get
+              standout apparel with zero waste.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="stack-sm">
+          <p class="site-header__brand" style="color: var(--color-on-ink)">Melina</p>
+          <p class="muted">AI-styled, print-on-demand apparel.</p>
+        </div>
+        <div class="stack-sm">
+          <p class="eyebrow">Shop</p>
+          <ul role="list" class="stack-sm">
+            <li><a href="#">New in</a></li>
+            <li><a href="#">Tees</a></li>
+            <li><a href="#">Outerwear</a></li>
+          </ul>
+        </div>
+        <div class="stack-sm">
+          <p class="eyebrow">About</p>
+          <ul role="list" class="stack-sm">
+            <li><a href="#">Our story</a></li>
+            <li><a href="#">Shipping</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="container" style="margin-top: var(--space-2xl)">
+        <p class="muted" style="font-size: var(--fs-300)">© 2026 Melina. Static preview.</p>
+      </div>
+    </footer>
+
+    <!-- Same scripts as the theme: GSAP, then loader + reveals -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+    <script src="../assets/loading.js" defer></script>
+    <script src="../assets/theme.js" defer></script>
+  </body>
+</html>
