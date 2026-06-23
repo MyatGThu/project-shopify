@@ -11,8 +11,38 @@
   "sections": {
     "hero": {
       "type": "hero",
+      "blocks": {
+        "slide_eK7m6Y": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_Jun_23_2026_06_24_17_PM.png",
+            "focal": "right"
+          }
+        },
+        "slide_azcy8B": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_Jun_23_2026_06_24_15_PM.png",
+            "focal": "right"
+          }
+        },
+        "slide_e6jmHK": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_Jun_23_2026_06_27_59_PM.png",
+            "focal": "right"
+          }
+        }
+      },
+      "block_order": [
+        "slide_eK7m6Y",
+        "slide_azcy8B",
+        "slide_e6jmHK"
+      ],
       "settings": {
         "image": "shopify://shop_images/Melina_-_Hero_-_Page_Background.png",
+        "focal": "right",
+        "autoplay_speed": 4,
         "side_label": "melbourne · est. 2026",
         "eyebrow": "spring campaign",
         "heading": "i make\nnice things",
