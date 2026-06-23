@@ -1,7 +1,7 @@
 # Project — Shopify
 
 A bespoke **Shopify Online Store 2.0 theme** for a print-on-demand (POD) apparel
-brand, featuring **Melina** (an AI brand model) styled in the products. The
+brand, featuring **Melina** — an AI brand model — wearing real, made-to-order products. The
 storefront is built for a premium, editorial feel: custom typography, GSAP
 scroll animations, an animated loading screen, and hand-built landing sections.
 

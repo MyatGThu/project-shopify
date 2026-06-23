@@ -100,8 +100,10 @@ Say the word and I can run any of these on a batch you provide.
 
 ## 6. Disclosure & ethics
 
-- Consider an honest, low-key disclosure that brand imagery is AI-generated where
-  appropriate (some regions/platforms increasingly expect it).
+- The **products are real**, made-to-order items — only the **model (Melina) and her
+  imagery are AI-generated**. Keep all brand copy consistent with that.
+- Consider an honest, low-key disclosure that the *model/imagery* is AI-generated
+  where appropriate (some regions/platforms increasingly expect it).
 - Ensure imagery reflects what actually ships, to avoid misleading customers.
 
 ---

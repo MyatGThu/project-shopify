@@ -522,3 +522,158 @@ button:focus-visible,
 .flow > * + * {
   margin-top: 1em;
 }
+
+/* =====================================================================
+   Editorial layer — distinctive sections (hero v2, marquee, editorial)
+   ===================================================================== */
+
+/* Serif italic accents read as "fashion editorial" */
+h1 em,
+h2 em,
+.hero__title em,
+.display em {
+  font-style: italic;
+}
+
+/* Numbered section index (01 —, 02 —) */
+.section-index {
+  display: block;
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-size: var(--fs-700);
+  line-height: 1;
+  color: var(--color-accent);
+}
+
+/* Make placeholder SVGs fill their media frames */
+.product-card__media svg,
+.editorial__media svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* ---- Hero v2: bottom-aligned, oversized, with side label + scroll cue ---- */
+.hero {
+  align-items: end;
+}
+.hero__content {
+  align-self: end;
+  max-width: 24ch;
+}
+.hero__title {
+  font-size: clamp(3rem, 1.4rem + 7.4vw, 7.5rem);
+  letter-spacing: -0.03em;
+}
+.hero__title em {
+  color: var(--color-accent);
+}
+.hero__sidelabel {
+  position: absolute;
+  top: var(--space-2xl);
+  right: var(--gutter);
+  z-index: 1;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-size: var(--fs-200);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(246, 243, 238, 0.7);
+}
+.hero__scrollcue {
+  position: absolute;
+  left: var(--gutter);
+  bottom: var(--space-lg);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: var(--fs-200);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(246, 243, 238, 0.7);
+}
+.hero__scrollcue::before {
+  content: "";
+  width: 48px;
+  height: 1px;
+  background: currentColor;
+  transform-origin: left;
+  animation: scrollcue 2.4s var(--ease-in-out) infinite;
+}
+@keyframes scrollcue {
+  0%, 100% { transform: scaleX(0.3); opacity: 0.5; }
+  50% { transform: scaleX(1); opacity: 1; }
+}
+@media (max-width: 750px) {
+  .hero__sidelabel { display: none; }
+}
+
+/* ---- Marquee ---- */
+.marquee {
+  overflow: hidden;
+  padding-block: var(--space-md);
+  background: var(--color-bg);
+  border-block: 1px solid var(--color-line);
+}
+.marquee--dark {
+  background: var(--color-ink-bg);
+  color: var(--color-on-ink);
+  border-color: rgba(246, 243, 238, 0.14);
+}
+.marquee__track {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  will-change: transform;
+  animation: marquee var(--marquee-duration, 28s) linear infinite;
+}
+.marquee__item {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-heading);
+  font-size: var(--fs-700);
+  letter-spacing: -0.01em;
+}
+.marquee__sep {
+  margin-inline: var(--space-xl);
+  font-size: 0.5em;
+  color: var(--color-accent);
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee__track { animation: none; }
+  .hero__scrollcue::before { animation: none; }
+}
+
+/* ---- Editorial split / lookbook ---- */
+.editorial__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(var(--space-xl), 6vw, var(--space-4xl));
+  align-items: center;
+}
+.editorial--reverse .editorial__media {
+  order: 2;
+}
+.editorial__media {
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+  background: var(--color-line);
+}
+.editorial__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.editorial__body {
+  max-width: 42ch;
+}
+@media (max-width: 750px) {
+  .editorial__grid { grid-template-columns: 1fr; gap: var(--space-lg); }
+  .editorial--reverse .editorial__media { order: 0; }
+}
