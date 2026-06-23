@@ -12,7 +12,7 @@
     "settings": [
       {
         "type": "header",
-        "content": "Relatable-glam direction (per the character bible). Friendlier serif + clean sans, lowercase casual voice. See docs/DESIGN_SYSTEM.md."
+        "content": "Relatable-glam direction: friendlier serif + clean sans, lowercase casual voice. See docs/DESIGN_SYSTEM.md."
       },
       {
         "type": "paragraph",

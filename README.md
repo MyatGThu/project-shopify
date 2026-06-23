@@ -64,8 +64,8 @@ theme connects to a live store.
 - **`docs/SHOPIFY_SETUP.md`** — create the store, connect this theme (Shopify
   CLI + GitHub), how checkout works, plan considerations.
 - **`docs/POD_SETUP.md`** — Printful vs Printify, install + product workflow.
-- **`docs/MELINA_ASSETS.md`** — generating Melina imagery with Higgs Field and
-  using it across the theme.
+- **`docs/MELINA_ASSETS.md`** — preparing Melina imagery and using it across the
+  theme.
 
 ---
 
@@ -100,8 +100,8 @@ npm run format         # prettier (Liquid-aware)
       design tokens, animated loading screen + hero showcase, full docs.
 - [ ] **Phase 1 — Landing + loading page**: finish the homepage narrative
       (pinned scroll sequences, marquee, lookbook), polish the loader.
-- [ ] **Phase 2 — Melina assets**: generate campaign imagery with Higgs Field,
-      wire into hero/lookbook/product media.
+- [ ] **Phase 2 — Melina assets**: produce campaign imagery and wire it into
+      hero/lookbook/product media.
 - [ ] **Phase 3 — Product + collection design**: PDP, collection grid, filtering,
       cart drawer.
 - [ ] **Phase 4 — Commerce setup**: connect store, install POD app, configure

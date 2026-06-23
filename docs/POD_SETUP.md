@@ -51,7 +51,7 @@ separate brands.)*
 
 ## How POD images feed the theme
 
-- **Hero / lookbook:** Melina imagery (Higgs Field) — the brand-defining shots.
+- **Hero / lookbook:** Melina imagery — the brand-defining shots.
 - **Product gallery:** Melina shot(s) first, then POD flat mockups + detail
   crops.
 - **Variant swatches:** POD mockup per color, or solid color chips.
